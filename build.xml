@@ -124,11 +124,13 @@
 	</target>
 	
     <target name="srczip" description="builds the source distribution zip file">
-        <zip destfile="${target.dir}/quiescence-${quiescence.version}-sources.jar" basedir="${src.dir}">
+        <zip destfile="${target.dir}/quiescence-${quiescence.version}-sources.jar">
             <fileset dir="${src.dir}">
                 <include name="**/*.java" />
-                <include name="**/*.xml" />
             </fileset>
+        	<fileset dir="${resources.dir}">
+            	<include name="**/*.xml" />
+        	</fileset>
             <fileset dir="${basedir}">
                 <include name="build.xml" />
                 <include name=".classpath" />
