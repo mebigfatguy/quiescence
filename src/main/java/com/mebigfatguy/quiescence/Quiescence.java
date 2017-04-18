@@ -10,7 +10,7 @@ import org.apache.tools.ant.property.LocalProperties;
 
 public class Quiescence extends Task {
 
-    private List<Task> nestedTasks = new ArrayList<>();
+    private List<Task> nestedTasks = new ArrayList<Task>();
 
     public void addTask(Task nestedTask) {
         nestedTasks.add(nestedTask);
