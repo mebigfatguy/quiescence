@@ -96,6 +96,33 @@
         </jar>
     </target>
 	
+	<macrodef name="test-quiescence-macro">
+		<attribute name="message" />
+		<sequential>
+			<quiescence>
+				<record name="${target.dir}/__test.txt" action="start" />
+				<echo message="answer=@{message}" />
+				<record name="${target.dir}/__test.txt" action="stop" />
+			</quiescence>
+		</sequential>
+	</macrodef>
+	
+	<target name="failtest" unless="property.matches">
+		<fail message="quiescence failed to work"/>
+	</target>
+			
+	<target name="test" depends="compile" description="run a test on the ant task">
+		<taskdef resource="com/mebigfatguy/quiescence/antlib.xml" classpath="${classes.dir}"/>
+		<test-quiescence-macro message="It works"/>
+		<replaceregexp file="${target.dir}/__test.txt" match="\[echo\]\s*" replace="" />
+		<property file="${target.dir}/__test.txt" />
+		<!--<delete file="${target.dir}/__test.txt" />-->
+		<condition property="property.matches">
+			<equals arg1="It works" arg2="${answer}"/>
+		</condition>
+		<antcall target="failtest"/>
+	</target>
+	
     <target name="srczip" description="builds the source distribution zip file">
         <zip destfile="${target.dir}/quiescence-${quiescence.version}-sources.jar" basedir="${src.dir}">
             <fileset dir="${src.dir}">
