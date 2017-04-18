@@ -6,9 +6,10 @@ import java.util.List;
 import org.apache.tools.ant.BuildListener;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.Task;
+import org.apache.tools.ant.TaskContainer;
 import org.apache.tools.ant.property.LocalProperties;
 
-public class Quiescence extends Task {
+public class Quiescence extends Task implements TaskContainer {
 
     private List<Task> nestedTasks = new ArrayList<Task>();
 
