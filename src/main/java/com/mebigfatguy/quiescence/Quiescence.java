@@ -27,7 +27,7 @@ import org.apache.tools.ant.property.LocalProperties;
 
 public class Quiescence extends Task implements TaskContainer {
 
-    private List<Task> nestedTasks = new ArrayList<>();
+    private List<Task> nestedTasks = new ArrayList<Task>();
 
     @Override
     public void addTask(Task nestedTask) {
