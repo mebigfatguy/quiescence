@@ -1,3 +1,3 @@
-<antlib xmlns:quiescence="ant:com.mebigfatguy.quiescence">
+<antlib xmlns:quiescence="antlib:com.mebigfatguy.quiescence">
    <taskdef name="quiescence" classname="com.mebigfatguy.quiescence.Quiescence"/>
 </antlib>
