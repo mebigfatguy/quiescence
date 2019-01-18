@@ -1,6 +1,6 @@
 /*
  * quiescence - an ant task to suppress output
- * Copyright 2017-2018 MeBigFatGuy.com
+ * Copyright 2017-2019 MeBigFatGuy.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
