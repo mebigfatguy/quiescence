@@ -142,7 +142,7 @@
     <target name="javadoc" depends="-init" description="build the javadoc for the project">
         <javadoc packagenames="com.mebigfatguy.*" sourcepath="${src.dir}" classpathref="quiescence.classpath" destdir="${javadoc.dir}" windowtitle="quiescence api">
             <doctitle><![CDATA[<h1>quiescence javadoc</h1>]]></doctitle>
-            <bottom><![CDATA[<i>Copyright &#169; 2017-2018 MeBigFatGuy.com. All Rights Reserved.</i>]]></bottom>
+            <bottom><![CDATA[<i>Copyright &#169; 2017-2019 MeBigFatGuy.com. All Rights Reserved.</i>]]></bottom>
         </javadoc>
     </target>
 
